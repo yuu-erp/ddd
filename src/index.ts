@@ -1,18 +1,11 @@
-import { UserEntity } from "./modules/user/domain/entitys/user.entity";
+import express from "express";
+import userRouter from "./modules/user/infrastructure/http/user.router";
+import postRouter from "./modules/user/infrastructure/http/user.router";
 
-console.log("NODEJS");
+const app = express();
 
-(() => {
-  try {
-    const userEntity = UserEntity.create({
-      email: "a@gmail.com",
-      password: "123",
-      name: "Nguyễn Văn A",
-      age: 25,
-    });
-    console.log("userEntity", userEntity.getProps());
-    console.log("userEntity id", userEntity.id.toString());
-  } catch (error) {
-    console.log(error);
-  }
-})();
+app.use(userRouter);
+
+app.listen(3000, () => {
+  console.log("Server is running on port 3000");
+});

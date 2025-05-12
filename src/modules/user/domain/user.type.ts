@@ -9,3 +9,5 @@ export interface UserProps {
 
 export interface CreateUserProps
   extends MarkOptional<UserProps, "name" | "age"> {}
+
+export interface UserModel extends UserProps {}

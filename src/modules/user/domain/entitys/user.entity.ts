@@ -10,7 +10,7 @@ export class UserEntity extends AggregateRoot<UserProps> {
       name: createUserProps.name || "",
       age: createUserProps.age || 0,
     };
-    const userEntity = new UserEntity({ id, props });
+    const userEntity = new UserEntity({ id, props: props });
 
     return userEntity;
   }
